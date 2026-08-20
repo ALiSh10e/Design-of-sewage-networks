@@ -1,0 +1,6 @@
+{
+  "id": "sample1",
+  "pipes": [
+    { "id":"P1", "length": 100.0, "diameter": 0.3, "slope": 0.001, "manningsN": 0.013, "hwCoeff": 130.0 }
+  ]
+}

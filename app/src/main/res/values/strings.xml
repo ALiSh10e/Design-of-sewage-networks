@@ -1,3 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">HydroFlow Pro</string>
+  <string name="app_name">Sewer Designer</string>
+  <string name="add_sample">Add sample pipe</string>
+  <string name="analyze">Analyze</string>
+  <string name="edit">Edit</string>
+  <string name="idle">Idle</string>
+  <string name="calculating">Calculating...</string>
 </resources>

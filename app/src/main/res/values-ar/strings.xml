@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">مصمم شبكات الصرف</string>
+  <string name="add_sample">إضافة أنبوب تجريبي</string>
+  <string name="analyze">حلل</string>
+  <string name="edit">تعديل</string>
+  <string name="idle">خامل</string>
+  <string name="calculating">جارٍ الحساب...</string>
+</resources>
