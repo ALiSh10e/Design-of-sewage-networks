@@ -1,0 +1,6 @@
+{
+  "name": "HydroFlow Pro",
+  "description": "تطبيق متكامل لتحليل وتصميم شبكات الصرف الصحي والمناسيب الطولية وهيدروليكيات مانينغ مع تصدير تقارير وملفات Civil 3D و DXF و Excel",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
