@@ -2,8 +2,20 @@
 <resources>
   <string name="app_name">Sewer Designer</string>
   <string name="add_sample">Add sample pipe</string>
+  <string name="add_pipe">Add pipe</string>
   <string name="analyze">Analyze</string>
   <string name="edit">Edit</string>
   <string name="idle">Idle</string>
   <string name="calculating">Calculating...</string>
+  <string name="manning_result">Manning Q = %1$s m3/s, v=%2$s m/s</string>
+  <string name="hw_result">H-W Q = %1$s m3/s, v=%2$s m/s</string>
+  <string name="pipe">Pipe</string>
+  <string name="pipe_id">Pipe ID</string>
+  <string name="length_m">Length (m)</string>
+  <string name="diameter_m">Diameter (m)</string>
+  <string name="slope">Slope (m/m)</string>
+  <string name="mannings_n">Manning's n</string>
+  <string name="hazen_williams_c">Hazen-Williams C</string>
+  <string name="save">Save</string>
+  <string name="cancel">Cancel</string>
 </resources>

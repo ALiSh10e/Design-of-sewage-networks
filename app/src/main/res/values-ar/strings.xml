@@ -2,8 +2,20 @@
 <resources>
   <string name="app_name">مصمم شبكات الصرف</string>
   <string name="add_sample">إضافة أنبوب تجريبي</string>
+  <string name="add_pipe">إضافة أنبوب</string>
   <string name="analyze">حلل</string>
   <string name="edit">تعديل</string>
   <string name="idle">خامل</string>
   <string name="calculating">جارٍ الحساب...</string>
+  <string name="manning_result">ماننغ Q = %1$s م3/ث، v=%2$s م/ث</string>
+  <string name="hw_result">هازن-ويليامز Q = %1$s م3/ث، v=%2$s م/ث</string>
+  <string name="pipe">أنبوب</string>
+  <string name="pipe_id">معرّف الأنبوب</string>
+  <string name="length_m">الطول (م)</string>
+  <string name="diameter_m">القطر (م)</string>
+  <string name="slope">الميل (م/م)</string>
+  <string name="mannings_n">ثابت مانينغ n</string>
+  <string name="hazen_williams_c">ثابت H-W C</string>
+  <string name="save">حفظ</string>
+  <string name="cancel">إلغاء</string>
 </resources>

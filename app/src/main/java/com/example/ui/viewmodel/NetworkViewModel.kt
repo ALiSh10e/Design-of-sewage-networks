@@ -5,8 +5,10 @@ import androidx.lifecycle.viewModelScope
 import com.example.engine.Hydraulics
 import com.example.engine.Pipe
 import com.example.engine.FlowResult
+import com.example.data.Repository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 sealed class UiState {
@@ -22,6 +24,20 @@ class NetworkViewModel: ViewModel() {
   private val _uiState = MutableStateFlow<UiState>(UiState.Idle)
   val uiState: StateFlow<UiState> = _uiState
 
+  init {
+    // repository flow subscription will be setup by calling observeFromRepository(context) from Activity after Repository.init
+  }
+
+  fun observeFromRepository() {
+    viewModelScope.launch {
+      try {
+        Repository.getAll().collect { list -> _pipes.value = list }
+      } catch (_: Exception) {
+        // repository not initialized or error
+      }
+    }
+  }
+
   fun addSamplePipe() {
     val sample = Pipe(
       id = "P1",
@@ -31,15 +47,15 @@ class NetworkViewModel: ViewModel() {
       manningsN = 0.013,
       hwCoeff = 130.0
     )
-    _pipes.value = _pipes.value + sample
+    addPipe(sample)
   }
 
   fun addPipe(pipe: Pipe) {
-    _pipes.value = _pipes.value + pipe
+    viewModelScope.launch { try { Repository.insert(pipe) } catch (_: Exception) {} }
   }
 
   fun clear() {
-    _pipes.value = emptyList()
+    viewModelScope.launch { try { Repository.clear() } catch (_: Exception) {} }
     _uiState.value = UiState.Idle
   }
 
@@ -49,7 +65,6 @@ class NetworkViewModel: ViewModel() {
     val pipe = list[index]
     viewModelScope.launch {
       _uiState.value = UiState.Calculating
-      // Run CPU-bound work here (small calculations)
       val (manningRes, hwRes) = Hydraulics.analyze(pipe)
       _uiState.value = UiState.Result(manningRes, hwRes)
     }
